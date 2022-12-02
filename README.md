@@ -1,27 +1,9 @@
-## Template
+## Generator
 
-Runs:
+Generates random things on demand as a website
+
+Made with:
 
 - Preact
-- Typescript
-- Less
-
-Compiles with:
-
+- TS
 - Webpack
-- Budo
-
-Compiles to:
-
-- ./dist
-- ~50KB total
-
-## Usage
-
-```
-# Run server
-yarn start 
-
-# Watch & Compile
-yarn watch
-```
