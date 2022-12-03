@@ -2,11 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    watch: true,
-    watchOptions: {
-        aggregateTimeout: 200,
-        poll: 1000,
-    },
     devtool: "inline-source-map",
     entry: {
         index: './src/index.tsx'
