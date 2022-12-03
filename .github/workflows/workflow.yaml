@@ -12,19 +12,14 @@ jobs:
         - name: Install dependencies
           run: yarn
 
+        - name: Install S3-Deploy
+          run: npm i -g s3-deploy@1.4.0
+
         - name: Build
           run: yarn build
 
         - name: Deploy
-          uses: reggionick/s3-deploy@v3
-          with:
-            folder: build
-            bucket: ${{ secrets.S3_BUCKET }}
-            bucket-region: us-west-2  
-            dist-id: ${{ secrets.CLOUDFRONT_DISTRO }}
-            invalidation: /
-            delete-removed: true
-            no-cache: true
-            private: true
-            filesToInclude: ".dist/*"
+          s3-deploy './dist/**' --cwd './dist/' --region us-west-2 --bucket generatordeploymentstack-generatorsitewebsitebuck-a4u07occ1rr3 --distId E390OGA1DUGGYX --invalidate '/*'
+
+
 
