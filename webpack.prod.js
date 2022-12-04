@@ -1,5 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
+const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const prettydata = require('pretty-data');
+
+const prettyPrint = (xml) => {
+    return prettydata.pd.xml(xml);
+};
 
 module.exports = {
     devtool: "inline-source-map",
@@ -12,7 +18,24 @@ module.exports = {
         filename: '[name].js',
         publicPath: './'
     },
-    plugins: [],
+    plugins: [
+        new SitemapPlugin({ base: 'https://generate-for-me.com', 
+            options: {
+                formatter: prettyPrint,
+                skipgzip: true,
+            },
+            paths: [
+                {
+                    path: '/',
+                    lastmod: new Date().toISOString(),
+                },
+                {
+                    path: '/emoji',
+                    lastmod: new Date().toISOString(),
+                }
+            ]
+        })
+    ],
     module: {
         rules: [
             {

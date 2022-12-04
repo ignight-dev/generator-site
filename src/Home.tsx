@@ -2,6 +2,8 @@ import { h } from "preact";
 
 export function Home( props : any ) {
 
+    window.document.title = "Generate For Me";
+
     return (
         <div className='container'>
             <h3 style={{textAlign: 'center'}}>

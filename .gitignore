@@ -1,5 +1,6 @@
 node_modules/**
 yarn.lock
-dist
+dist/index.html
+dist/index.js
 package-lock.json
 yarn-error.log

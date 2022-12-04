@@ -18,6 +18,8 @@ function ResultEmoji( props : { result : string } ) {
 
 export function RandomEmoji() {
 
+    window.document.title = "Generate Random Emoji";
+
     const [emoji, setEmoji] = useState([getRandom()]);
     return (
         <div className='container'>

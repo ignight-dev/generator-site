@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
+
 module.exports = {
     watchOptions: {
         aggregateTimeout: 200,
@@ -16,7 +17,6 @@ module.exports = {
         filename: '[name].js',
         publicPath: './'
     },
-    plugins: [],
     module: {
         rules: [
             {
@@ -36,7 +36,7 @@ module.exports = {
                   "css-loader",
                   "less-loader",
                 ],
-            },
+            }
         ]
     },
     devServer: {
