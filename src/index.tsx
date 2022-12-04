@@ -4,13 +4,16 @@ import {RandomEmoji} from './RandomEmoji'
 import {Home} from './Home'
 import './style.less'
 
-function Page ( props : { name : string, path : string, children: any } ) {
+function Page ( props : { name : string, footer: string, path : string, children: any } ) {
     return (
         <div>
             <div className="page-header">
                 <a href="/">Generate</a> → {props.name}
             </div>
             {props.children}
+            <div className="page-footer">
+                {props.footer}
+            </div>
         </div>
     )
 
@@ -20,7 +23,10 @@ function Render () {
     return (
         <div>
             <Router>
-                <Page name="Random Emoji" path="/emoji">
+                <Page 
+                    name="Random Emoji" 
+                    footer="Generate A Random Emoji Quickly And Easy!"
+                    path="/emoji">
                     <RandomEmoji/>
                 </Page>
                 <Home path="/"/>
