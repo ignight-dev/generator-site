@@ -19,7 +19,7 @@ jobs:
           run: yarn build
 
         - name: Deploy
-          s3-deploy './dist/**' --cwd './dist/' --region us-west-2 --bucket {{ secrets.S3_BUCKET }} --distId {{ secrets.CLOUDFRONT_DISTRO }} --invalidate '/*'
+          run: s3-deploy './dist/**' --cwd './dist/' --region us-west-2 --bucket {{ secrets.S3_BUCKET }} --distId {{ secrets.CLOUDFRONT_DISTRO }} --invalidate '/*'
 
 
 
