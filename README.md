@@ -7,4 +7,3 @@ Made with:
 - Preact
 - TS
 - Webpack
-
