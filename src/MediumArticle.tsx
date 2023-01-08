@@ -7,7 +7,7 @@ const hints = [
     "Why you should never use a computer",
     "Why spongebob is secretly communist",
     "Why my roomate needs to do the dishes",
-    "Why I am a god and you are a mere mortal"
+    "Why I am a god and you are a mere mortal",
 ]
 
 async function makeRequestCall ( title : string ) {
@@ -36,18 +36,22 @@ export function MediumArticle() {
     const [results, setResults] = useState([] as any[])
 
     const makeRequest = async () => {
+        let i = inputValue
+        if (!inputValue){
+            i = hint 
+        }
         setGenerating(true)
-        const {title, url} = await makeRequestCall(inputValue)
+        const {title, url} = await makeRequestCall(i)
         setResults([{title, url}, ...results])
         setGenerating(false)
     }
-
+    
     return (
         <div className="container">
             <h3 style={{textAlign: 'center'}}>
                 Medium Article Title:
             </h3>
-            <input placeholder={hint} onChange={v => {
+            <input placeholder={hint} value={inputValue} onInput={v => {
                 //@ts-ignore
                 setInputValue(v.target.value);
                 setHint(hints[Math.floor(Math.random() * hints.length)]);
@@ -62,7 +66,7 @@ export function MediumArticle() {
             }
 
             {
-                generating && <Progressbar text="Generating ... (May take a while)"/>
+                generating && <Progressbar text="Generating ... (May take up to 60s)"/>
             }       
 
             {
