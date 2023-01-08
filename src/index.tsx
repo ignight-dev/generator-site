@@ -32,7 +32,7 @@ function Render () {
                 </Page>
                 <Page 
                     name="Medium Article" 
-                    footer="Generate A Medium Article for a Given Title!"
+                    footer="Generate A Draft Medium Article!"
                     path="/article">
                     <MediumArticle/>
                 </Page>

@@ -3,14 +3,33 @@ import { useState } from "preact/hooks";
 import { Progressbar } from "./components/progressbar";
 
 const hints = [
-    "Why anchient sparta would be a good place to live today",
-    "Why you should never use a computer",
+
+    // Very wild article topsic
     "Why spongebob is secretly communist",
-    "Why my roomate needs to do the dishes",
-    "Why I am a god and you are a mere mortal",
+    "Why you should never use a computer again",
+    "Why the earth is flat",
+
+    // Targetd article titles
+    "Why Jack need to do the dishes and get a job",
+    "Why Eric is the best person in the world and why you should love him",
+
+    // Random article titles
+    "10 reasons why dogs are actually cats in disguise",
+    "How to make a million dollars in 10 minutes",
+    "Why becoming a zombie might be a better life choice",
+
+    // enraging article titles
+    "Why the global elite are secretly reptilians",
+    "Why yoga is a cult run by the illuminati",
+
 ]
 
 async function makeRequestCall ( title : string ) {
+
+    // capitialize first letter of every word
+    title = title.split(" ").map((word) => {
+        return word[0].toUpperCase() + word.slice(1)
+    }).join(" ")
 
     const baseUrl = "https://6i5b3g7h5kmouou3hdzbsjstyy0uwpbo.lambda-url.us-west-2.on.aws/"
     const result = await fetch(baseUrl, {
@@ -74,7 +93,7 @@ export function MediumArticle() {
                 <div>
                     <div className="hr" />
                     <h4 style={{marginTop: 50}}>
-                        Generated Articles:
+                        Generated Articles: (viewable through direct link only)
                     </h4>
                     {
                         results.map((result, i) => {
