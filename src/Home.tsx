@@ -11,8 +11,13 @@ export function Home( props : any ) {
             </h3>
             <br/>
             <br/>
+            <a href="/article" className='center'>
+                <button style={{fontSize: 20}}>
+                    📝 Medium Article
+                </button>
+            </a>
             <a href="/emoji" className='center'>
-                <button>
+                <button style={{fontSize: 20}}>
                     🚀 Random Emoji
                 </button>
             </a>

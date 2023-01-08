@@ -3,6 +3,7 @@ import Router from 'preact-router'
 import {RandomEmoji} from './RandomEmoji'
 import {Home} from './Home'
 import './style.less'
+import { MediumArticle } from './MediumArticle'
 
 function Page ( props : { name : string, footer: string, path : string, children: any } ) {
     return (
@@ -28,6 +29,12 @@ function Render () {
                     footer="Generate A Random Emoji Quickly And Easy!"
                     path="/emoji">
                     <RandomEmoji/>
+                </Page>
+                <Page 
+                    name="Medium Article" 
+                    footer="Generate A Medium Article for a Given Title!"
+                    path="/article">
+                    <MediumArticle/>
                 </Page>
                 <Home path="/"/>
             </Router>
