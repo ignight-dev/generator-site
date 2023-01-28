@@ -1,0 +1,8 @@
+variables:
+  websiteBucket: generatordeploymentstack-websitewebsitebucketc070-12z6zxyqcpqxi
+  websiteDistribution: E1CRSMU45ZR6SX
+actions:
+  deploy-site:
+    - bash npm run build
+    - upload s3 --bucket $websiteBucket --local dist
+    - invalidate cloudfront --distribution $websiteDistribution

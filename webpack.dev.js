@@ -1,8 +1,12 @@
 const webpack = require('webpack');
 const path = require('path');
-
+const PreactRefreshPlugin = require('@prefresh/webpack');
 
 module.exports = {
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new PreactRefreshPlugin(),
+    ],
     watchOptions: {
         aggregateTimeout: 200,
         poll: 1000,

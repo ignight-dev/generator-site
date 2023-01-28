@@ -32,6 +32,10 @@ module.exports = {
                 {
                     path: '/emoji',
                     lastmod: new Date().toISOString(),
+                },
+                {
+                    path: '/article',
+                    lastmod: new Date().toISOString(),
                 }
             ]
         })

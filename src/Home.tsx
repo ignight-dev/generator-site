@@ -12,13 +12,18 @@ export function Home( props : any ) {
             <br/>
             <br/>
             <a href="/article" className='center'>
-                <button style={{fontSize: 20}}>
+                <button style={{fontSize: 20, width: 300}}>
                     📝 Medium Article
                 </button>
             </a>
             <a href="/emoji" className='center'>
-                <button style={{fontSize: 20}}>
+                <button style={{fontSize: 20, width: 300}}>
                     🚀 Random Emoji
+                </button>
+            </a>
+            <a href="/ai-profile" className='center'>
+                <button style={{fontSize: 20, width: 300}}>
+                    🦾 AI Profile Picture
                 </button>
             </a>
         </div>

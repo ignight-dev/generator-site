@@ -28,6 +28,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@prefresh/webpack": "^3.3.4",
     "lessify": "^1.0.2",
     "preact": "*",
     "preact-async-route": "^2.2.1",

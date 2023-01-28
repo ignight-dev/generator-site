@@ -4,6 +4,7 @@ import {RandomEmoji} from './RandomEmoji'
 import {Home} from './Home'
 import './style.less'
 import { MediumArticle } from './MediumArticle'
+import { ProfilePicture } from './Profilepicture'
 
 function Page ( props : { name : string, footer: string, path : string, children: any } ) {
     return (
@@ -17,10 +18,15 @@ function Page ( props : { name : string, footer: string, path : string, children
             </div>
         </div>
     )
+}
 
+function Redirect ( props : {path : string, default : any} ) {
+    window.location.href = props.path
+    return <div/>
 }
 
 function Render () {
+
     return (
         <div>
             <Router>
@@ -36,7 +42,14 @@ function Render () {
                     path="/article">
                     <MediumArticle/>
                 </Page>
+                <Page 
+                    name="AI Profile Picture" 
+                    footer="Generate a profile picture with AI"
+                    path="/ai-profile">
+                    <ProfilePicture/>
+                </Page>
                 <Home path="/"/>
+                <Redirect default path='/' />
             </Router>
         </div>
     )

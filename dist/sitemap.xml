@@ -7,10 +7,14 @@
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://generate-for-me.com/</loc>
-    <lastmod>2022-12-04T00:44:57.989Z</lastmod>
+    <lastmod>2023-01-28T23:35:49.585Z</lastmod>
   </url>
   <url>
     <loc>https://generate-for-me.com/emoji</loc>
-    <lastmod>2022-12-04T00:44:57.989Z</lastmod>
+    <lastmod>2023-01-28T23:35:49.585Z</lastmod>
+  </url>
+  <url>
+    <loc>https://generate-for-me.com/article</loc>
+    <lastmod>2023-01-28T23:35:49.585Z</lastmod>
   </url>
 </urlset>
